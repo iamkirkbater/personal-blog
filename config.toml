@@ -1,0 +1,29 @@
+baseURL = "https://www.bater.io/"
+languageCode = "en-us"
+title = "Kirk Bater"
+theme = "hyde"
+googleAnalytics = "UA-112318786-1"
+
+[permalinks]
+  post = "/:year/:month/:title/"
+
+[params]
+  layoutReverse = true
+  description = "Polyglot Software Engineer; Woodworker; Triathlete; Eater of Foods"
+  github_user = "kirkbater"
+
+[[menu.main]]
+  name = "Github"
+  weight = -100
+  identifier = "about"
+  url = "https://www.github.com/iamkirkbater"
+[[menu.main]]
+  name = "Twitter"
+  weight = -90
+  identifier = "twitter"
+  url = "https://twitter.com/KirkBater"
+[[menu.main]]
+  name = "LinkedIn"
+  weight = "-80"
+  identifier = "linkedin"
+  url = "https://www.linkedin.com/in/kirkbater/"

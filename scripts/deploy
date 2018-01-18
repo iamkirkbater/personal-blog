@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e # Fail fast
+
+# Build a fresh copy
+hugo -v
+
+# Copy over pages - not static js/img/css/downloads
+aws s3 sync --acl "public-read" --sse "AES256" public/ s3://bater-io-blog --exclude 'post' --no-verify-ssl
+
+# Invalidate root page and page listings
+aws cloudfront create-invalidation --distribution-id E5LIV4GVPRX1Q --paths /index.html / /page/* --no-verify-ssl
