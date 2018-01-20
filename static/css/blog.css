@@ -1,0 +1,27 @@
+video {
+  max-width: 100%;
+}
+
+ul.posts {
+  padding-left: 0;
+}
+
+.post-summary {
+  margin-bottom: 2rem;
+}
+
+.post-summary .post-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  display: block;
+}
+
+.post-summary .summary {
+  padding-top: .5rem;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 1.1rem;
+  }
+}

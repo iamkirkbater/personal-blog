@@ -1,3 +1,3 @@
-[submodule "themes/hyde"]
-	path = themes/hyde
-	url = https://github.com/spf13/hyde.git
+[submodule "themes/hyde-14"]
+	path = themes/hyde-14
+	url = https://github.com/lroguet/hyde-14.git
