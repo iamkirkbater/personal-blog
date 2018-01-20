@@ -6,6 +6,7 @@ description: "In the last post we covered the why, now let's jump into what make
 ---
 
 Now that we’ve covered “why” in the last post, let’s get into what makes a unit test “good”. Good unit tests cover all the code, each test should test one thing and one thing only, and they are completely independent of one another.
+<!--more-->
 
 ### Test Coverage
 You should always aim for 100% coverage. It's not always possible, though, mostly due to methods or variables being protected or private. There are some who would argue that 100% code coverage is the only acceptable percentage you can aim for. I am not one of them but I am in the camp that if you can get 100% coverage you should.
