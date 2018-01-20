@@ -1,0 +1,17 @@
+language: python
+
+install:
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.31.1/hugo_0.31.1_Linux-64bit.deb
+    - sudo dpkg -i hugo*.deb
+    - pip install Pygments
+
+script:
+    - hugo
+
+env:
+  global:
+  - DEPLOY_BRANCH="master"
+  # BUCKET_NAME
+  - secure: "B21+FzDj1VBcxdSr4hsz3yKnPEk/M87ffuZ560gCaZoKo69p8Iq5SebVQgw4iNkGMkvW0qC/bvqcEBnIQiSYP62SXsoLMTvO2rTHYrdO4jgwmf5A31fe1uha2h2FYxzbRgAPWEEPx9zYv+adUMWmiyhSF5GbJ6k9dEHn+C1GFVL0sLxs3eC2JIAdcKdA9BIllhQcC18SvzdI/tNRqFmLIn3YatHTvmsFOoqfUCPfM08Fezmb9sZJ0j4cPIG+JsPPj5KrzY9HFShpG2lWIjY7+axeUpsqU7JlYx4bYjSSdrAZcBxFWF1WdPvXeTMrBwXdy9jTQ3b1mcVG5FhU8vCK9EHZY/OMRNiXSjPicbTUfl7GZt2HfrSB9GqtafgrWQ4HOMymgsMJHxmPVcrZU2pGcb3/eNPoRcZ3KNPL4K4ZMNtJQ9LT/JXPnrMc3V2nAxYAyutS3iQsJOffgy6co/rN+W/owqSlS3VeWIJSUKeP64KW9VyckqFLbLlT1HYviv8YK9uwOgH1qzYGrvw5TJD7nUzMlkwSOAtOiU7RaxCQKdnxVLHnFficY8dIaIQewUkkqIxedHQ9JtOAXD3awenv/j7eQ4KTCmozGllji3Ep43YK+q7oQwjClmCoyrwl6blHhy1doeULpmNx/bP2jaUN6TMfdehE99slBPJT7wkHdQg="
+  # DISTRIBUTION_ID
+  - secure: "uHNmN5MvPLK5mJJN3KnR0CF8FaY7gDSV/3M/2/lum2CAJaYpQsKdukeM0gMNXgQPmnikQxuQUdXGM044qlNmhcQRKqnydK8K4ikEj2q3bYUQRzYWUMPn0l+iuUZMAH7ZEBcMUTTuLNctDgEoE4K5TxdIJ2rOQBMNT+4DuB429HcVIGZAyI0vS6q2QmHwAJ0e9OPe/5u3vpq7qyG8cO0Bv/lb73edZR1H57YesPrr9t6GHm3YUbo5cBu5TfqPUgzIXiPim7F9/6vUOlH/ZbWjqPq8/SN45lC6XCAtmrk4A2naQp+wFMK2VaEs9IR152MaFE8low+BYvf9UD9sPaDv4uE5PQEqaQbEtX3TZVisTkIGd7aOGEb3o8sER9u45a8K98AOXSlG6fTIspw0khy7n873hf3aB07nNXHuceTKcxFC33mD4JDQ3AKBN+vPU6dH8FpHfFRK3v24ySk9KhB7y7Mo5Aw4IX6kJyGPlxCyT6JpDlSSVN+IG55Y79tEw9V++Tq1rtsmIglVes1s+tsP4pLRCwXSEAmVsKibcaNwxcTAn6kaA8b7WbBInYTr1u4NF1kVoH4038e2ZgTkmGpwKdl019CvWo7PvvM7vGrL79mkmQZwD862LxWdNWJNXwGq9t3owhG5CL/nRv+Sos5iigBlW8xii6EwEmZ8RO4Mc/c="
