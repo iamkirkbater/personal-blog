@@ -1,0 +1,17 @@
+{{ partial "head.html" . }}
+
+<div class="content container">
+  <h1 class="post-title">{{ .Title }}</h1>
+  <ul class="posts">
+    {{ range where .Data.Pages "Section" "posts" }}
+      <li class="post-summary">
+        <a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a>
+        <span class="post-date-list"><time>{{ .Date.Format "Jan 2, 2006" }}</time></span>
+  			<span class="post-read-time">{{ .ReadingTime }} minute read</span>
+        <div class="summary">{{ .Summary }}</div>
+      </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ partial "foot.html" . }}

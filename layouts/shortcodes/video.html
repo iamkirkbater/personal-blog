@@ -1,0 +1,8 @@
+
+<video
+  {{ with .Get "controls" }}controls{{ end }}
+  {{ with .Get "autoplay" }}autoplay{{ end }}
+  {{ with .Get "name" }}name="{{.}}"{{ end }}
+  {{ with .Get "loop" }}loop{{ end }}>
+    <source {{ with .Get "src" }}src="{{.}}"{{ end }}{{ with .Get "type" }} type="{{.}}"{{ end }}>
+</video>

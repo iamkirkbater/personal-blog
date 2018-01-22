@@ -1,0 +1,48 @@
+video {
+  max-width: 100%;
+}
+
+ul.posts {
+  padding-left: 0;
+}
+
+.post-summary {
+  margin-bottom: 2rem;
+}
+
+.post-summary .post-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  display: block;
+}
+
+.post-summary .summary {
+  padding-top: .5rem;
+}
+
+aside.note {
+  border: 1px solid #CCC;
+  background: #fdfdfd;
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+
+aside.note.info {
+  border-left: 3px solid #268bd2;
+}
+
+aside.note.warning {
+  border-left: 3px solid #ffce62;
+}
+
+aside.note.error {
+  border-left: 3px solid #bf616a;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 1.1rem;
+  }
+}

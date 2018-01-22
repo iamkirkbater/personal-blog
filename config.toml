@@ -1,29 +1,24 @@
 baseURL = "https://www.bater.io/"
 languageCode = "en-us"
 title = "Kirk Bater"
-theme = "hyde"
+theme = "hyde-14"
 googleAnalytics = "UA-112318786-1"
 
+[author]
+  name = "Kirk Bater"
+  github = "iamkirkbater"
+  twitter = "KirkBater"
+  linkedin = "kirkbater"
+
 [permalinks]
-  post = "/:year/:month/:title/"
+  posts = "posts/:year/:month/:title/"
+  pages = ":slug/"
 
 [params]
   layoutReverse = true
   description = "Polyglot Software Engineer; Woodworker; Triathlete; Eater of Foods"
   github_user = "kirkbater"
-
-[[menu.main]]
-  name = "Github"
-  weight = -100
-  identifier = "about"
-  url = "https://www.github.com/iamkirkbater"
-[[menu.main]]
-  name = "Twitter"
-  weight = -90
-  identifier = "twitter"
-  url = "https://twitter.com/KirkBater"
-[[menu.main]]
-  name = "LinkedIn"
-  weight = "-80"
-  identifier = "linkedin"
-  url = "https://www.linkedin.com/in/kirkbater/"
+  css = "css/blog.css"
+  social = [
+    "twitter-summary-card"
+  ]
