@@ -22,7 +22,6 @@ env:
 
 before_deploy:
   - pip install awscli
-
 deploy:
   provider: script
   script: scripts/deploy
