@@ -22,7 +22,7 @@ Good tests are clear. You should treat your tests like first-class code. If your
 
 Just like with your application code, you also want your tests to follow programming best-practices. DRY (Don’t Repeat Yourself) is one of the things I see that can make a test suite excruciatingly hard to read through.
 
-{{% aside %}}Somewhat related: you should only be checking what needs to be checked for _that test case_. If you already checked for good output in one case you _shouldn’t_ have to check for it in every other test where you test for your edge cases. Just check what’s needed to validate the edge cases.{{% /aside %}}
+{{% aside class="info" %}}Somewhat related: you should only be checking what needs to be checked for _that test case_. If you already checked for good output in one case you _shouldn’t_ have to check for it in every other test where you test for your edge cases. Just check what’s needed to validate the edge cases.{{% /aside %}}
 
 I personally believe the best way to be clear about what is happening in your code is to be minimal. I'm a firm believer that each test should be testing for one specific thing. I feel it's better to have many small tests than a few large ones. This way it's easier to debug tests that fail unexpectedly and pinpoint what exactly is wrong in your code.
 
@@ -35,7 +35,30 @@ In any software project your code needs to be organized. Test code is no excepti
 
 I personally have my own "style" when it comes to tests. I prefer to group all of my failure cases at the top of my test grouping, and then I add all of my other assertions below that. For example, if I want to test that a method should throw an error under conditions X and Y, but should resolve under Z, I first test for X and Y then I test for Z. It's really just a personal preference, really, but I've found that I more success cases than failure cases over time so I can just add new success cases to the end of the grouping.
 
-Let's talk about grouping tests. This, just like the failure -> success organization, is probably mostly just personal preference on how to actually execute &mdash; the key is to be consistent. First, I have a single test file that tests a single code file. For example if I have a file: `src/some/dir/aws.js` I would have a test file `test/some/dir/awsTest.js`. Then, inside of `awsTest.js` I would be testing every method of `aws.js`. I probably also have multiple tests for each method so I group all of those tests together. If a method has a significantly complex functionality I might even have more groupings inside of those. At the end of the day I want to be able to quickly navigate my test suite and pinpoint where a problem is if it arises.
+Let's talk about grouping tests. Consistency is the key factor to this, which just like the failure -> success organization is mostly just personal preference on how to actually execute. I have a single test file that tests a single code file. I then have multiple tests for each method, so I group all of those tests together. If a method has a significantly complex functionality I might even have more groupings inside of those main groups. At the end of the day I want to be able to quickly navigate my test suite and pinpoint where a problem is.
+
+For example if I have a file: `src/some/dir/aws.js` I would have a test file `test/some/dir/awsTest.js`. Then, inside of `awsTest.js` I would be testing every method of `aws.js`, and it might look something like this:
+
+```JavaScript
+describe('Testing aws.js', () => {
+  describe('Testing myFirstMethod', () => {
+    it('runs the test', () => Promise.resolve());
+  });
+
+  describe('Testing myComplexMethod', () => {
+    describe('Logical grouping of individual tests here', () => {
+      it('runs the test', () => Promise.resolve());
+      it('runs the test', () => Promise.resolve());
+      it('runs the test', () => Promise.resolve());
+    });
+
+    describe('Another grouping of tests', () => {
+      it('runs the test', () => Promise.resolve());
+      it('runs the test', () => Promise.resolve());
+    });
+  });
+});
+```
 
 ### Independence
 Every test should be 100% independent of other tests. I can not repeat myself enough on this point. If one test relies on the state of the previous test the assertions from the second might as well be in the first test. Tying back to test clarity you should utilize your setup and teardown functions to do things like reset your test database, restore your mocks, or otherwise reset your fake data back to default values.

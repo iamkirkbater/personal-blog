@@ -1,5 +1,5 @@
 
 <aside
-{{ with .Get "autoplay" }}class="{{.}}"{{ end }}>
-	<div class="admonition-content">{{- .Inner -}}</div>
+  class="note {{ with .Get "class" }}{{.}}{{ end }}">
+	<div class="aside-inner">{{- .Inner -}}</div>
 </aside>
