@@ -2,6 +2,22 @@ video {
   max-width: 100%;
 }
 
+.post {
+  border-bottom: 0;
+}
+
+.post.content-type--posts {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+pre {
+  overflow-x: scroll;
+  overflow-y: auto;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+}
+
 ul.posts {
   padding-left: 0;
 }
