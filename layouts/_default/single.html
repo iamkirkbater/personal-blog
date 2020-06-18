@@ -18,7 +18,9 @@
 
   {{ if eq .Type "posts" }}
 
-  This post is most likely filled with opinions. If you have any questions or think those opinions are wrong, <a href="/contact">I'd love to hear why</a>.
+  <p>This post is most likely filled with opinions. If you have any questions or think those opinions are wrong, <a href="/contact">I'd love to hear why</a>.</p>
+
+  <p>Obligitory: My views are my own and do not represent my employer or any other organization I'm affiliated with.</p>
   {{ end }}
 
 	{{ if and (.Site.Params.disqusShortname) (ne .Params.comments false) }}
