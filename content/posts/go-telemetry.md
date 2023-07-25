@@ -1,7 +1,7 @@
 ---
 title: "Telemetry in Go - Readers"
-date: 2023-07-24T20:32:00-05:00
-draft: true
+date: 2023-07-26T08:00:00-05:00
+draft: false
 ---
 
 I was struggling to understand when to use the two main types of readers that come within the OpenTelemetry Go package, and wanted to share what I've learned. This is the intro post to a series where I'm going to cover some telemetry things in Go, ending with creating a plug-and-play telemetry add-on for the [cobra-cli](https://cobra.dev/).
