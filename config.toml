@@ -1,7 +1,7 @@
 baseURL = "https://www.bater.io/"
 languageCode = "en-us"
 title = "Kirk Bater"
-theme = "hyde-14"
+theme = "hyde"
 googleAnalytics = "UA-112318786-1"
 
 [author]
@@ -17,7 +17,7 @@ googleAnalytics = "UA-112318786-1"
 [params]
   layoutReverse = true
   description = "Polyglot Software Engineer; Woodworker; Triathlete; Eater of Foods"
-  github_user = "kirkbater"
+  github_user = "iamkirkbater"
   css = ["css/blog.css"]
   social = [
     "twitter-summary-card"

@@ -1,3 +1,36 @@
+h1, h2, h3, h4, h5, h6, .sidebar-about h1 {
+  font-family: "PT Sans",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h1.post-title {
+  font-size: 2rem;
+}
+
+.post-meta {
+    padding-bottom: 1rem;
+    color: #757575;
+}
+
+.post-date {
+    display: inline;
+}
+
+.posts {
+    max-width: 40rem;
+}
+
+.posts h1.post-title {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+.posts .post-meta {
+    padding-bottom: 0.5rem;
+}
+
 video {
   max-width: 100%;
 }
