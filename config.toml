@@ -18,7 +18,7 @@ googleAnalytics = "UA-112318786-1"
   layoutReverse = true
   description = "Polyglot Software Engineer; Woodworker; Triathlete; Eater of Foods"
   github_user = "kirkbater"
-  css = "css/blog.css"
+  css = ["css/blog.css"]
   social = [
     "twitter-summary-card"
   ]

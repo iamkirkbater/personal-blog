@@ -6,6 +6,18 @@ video {
   border-bottom: 0;
 }
 
+@media (min-width: 64em) {
+  .content {
+    max-width: 55em;
+  }
+}
+
+@media (min-width: 128em) {
+  .layout-reverse .content {
+    margin-left: 30em;
+  }
+}
+
 .post.content-type--posts {
   border-bottom: 1px solid #e5e5e5;
 }
