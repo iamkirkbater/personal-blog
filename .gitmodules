@@ -3,4 +3,4 @@
 	url = https://github.com/lroguet/hyde-14.git
 [submodule "themes/hyde"]
 	path = themes/hyde
-	url = git@github.com:spf13/hyde
+	url = https://github.com/spf13/hyde.git
