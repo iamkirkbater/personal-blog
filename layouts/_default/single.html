@@ -1,31 +1,30 @@
-{{ partial "head.html" . }}
-
-<div class="content container">
-	<div class="post content-type--{{ .Type }}">
-		<h1 class="post-title">{{ .Title }}</h1>
-    {{ if eq .Type "posts" }}
-		<span class="post-date no-print">
-			{{ .Date.Format "Jan 2, 2006" }}
-			&middot; {{ .ReadingTime }} minute read
-			{{ if and (.Site.Params.disqusShortname) (ne .Params.comments false) }}
-				&middot; <a href="{{ .Permalink }}#disqus_thread" title="Comments on '{{ .Title }}'">Comments</a>
-			{{ end }}
-		</span>
-    {{ end }}
-		{{ .Content }}
-		{{ partial "taxonomy.html" . }}
-	</div>
+{{ define "main" -}}
+  <div class="post content-type--{{ .Type }}">
+  	<h1 class="post-title">{{ .Title }}</h1>
+  {{ if eq .Type "posts" }}
+  	<div class="post-meta">
+          <span class="read-time no-print">{{ .ReadingTime }} minute read &middot; </span>{{ .Date.Format "Jan 2, 2006" }}
+  		{{ if and (.Site.Params.disqusShortname) (ne .Params.comments false) }}
+          <span class="comments-link no-print"> &middot; <a href="{{ .Permalink }}#disqus_thread" title="Comments on '{{ .Title }}'">Comments</a></span>
+  		{{ end }}
+  	</div>
+  {{- end }}
+  {{ .Content }}
+  </div>
 
   {{ if eq .Type "posts" }}
 
-  <p>This post is most likely filled with opinions. If you have any questions or think those opinions are wrong, <a href="/contact">I'd love to hear why</a>.</p>
+  <div class="post-footer">
 
-  <p>Obligitory: My views are my own and do not represent my employer or any other organization I'm affiliated with.</p>
+    <p>This post is most likely filled with opinions. If you have any questions or think those opinions are wrong, <a href="/contact">I'd love to hear why</a>.</p>
+
+    <p>Obligitory: My views are my own and do not represent my employer or any other organization I'm affiliated with.</p>
+
+  </div>
   {{ end }}
 
-	{{ if and (.Site.Params.disqusShortname) (ne .Params.comments false) }}
-		{{ partial "disqus.html" . }}
-	{{ end }}
-</div>
-
-{{ partial "foot.html" . }}
+  {{ if .Site.DisqusShortname -}}
+    <h2>Comments</h2>
+    {{ template "_internal/disqus.html" . }}
+  {{- end }}
+{{- end}}
